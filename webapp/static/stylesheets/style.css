@@ -1,0 +1,246 @@
+h1
+{
+    font-family: cursive;
+    font-size: 25px;
+}
+.navbar-brand
+{
+    font-size: 25px;
+    padding-left: 5px;
+    /* font-family: "Times New Roman", Times, serif; */
+    font-weight: bold;
+    text-shadow: 0 0 .5em rgba(0, 0, 0, 0.6);
+    background-color: lightskyblue;
+    padding: .5em;
+    color: #fff;
+}
+
+.navbar-light .navbar-brand
+{
+    color: white;
+    
+}
+
+
+/* .navbar
+{
+    padding-bottom: 420px;
+} */
+
+#button
+{
+    font-size: 15px;
+}
+
+.navbar-nav
+{
+    padding-left: 40px;
+}
+
+/* .bg-light
+{
+    background-image: url('../images/Twitter-Climate.jpg');
+} */
+
+#row1
+{
+    text-align: center;
+}
+
+.p-3
+{
+    padding-bottom: 0px;
+}
+
+#firstrow
+{
+    margin-top: 70px;
+    margin-bottom: 70px;
+}
+
+.row
+{
+    background-color: white;
+}
+
+p
+{
+    margin-bottom: 0px;
+}
+
+#subbox
+{
+    padding: 10px;
+}
+
+#subbox-2
+{
+    padding: 10px;
+    justify-content: center;
+}
+
+body
+{
+    background-color: white;
+}
+
+#secondrow
+{
+    padding-bottom: 30px;
+}
+
+.mb-2, .my-2
+{
+    margin-bottom: 0px;
+}
+
+hr
+{
+    padding-bottom: 50px;
+}
+
+#about
+{
+    background-image: url('../images/Handover.jpg');
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 115px;
+    color: darkblue;
+    margin-top: 60px;
+    filter: drop-shadow(2px 4px 6px black);
+}
+
+#readability
+{
+    text-align: center;
+    margin-top: 50px;
+}
+
+.blog-footer 
+{
+    padding: 2.5rem 0;
+    padding-top: 20px;
+    padding-bottom: 1px;
+    color: #999;
+    text-align: center;
+    background-color: lightskyblue;
+    border-top: .05rem solid lightskyblue;
+}
+.blog-footer p:last-child 
+{
+    margin-bottom: 0;
+}
+
+#thirdrow
+{
+    margin-bottom: 60px;
+}
+
+.btn1 
+{
+    color: black;
+    background-color: transparent;
+    border-color: transparent;
+    text-shadow: 0 0 0.5em rgba(0, 0, 0, 0.6);
+    padding: .5em;
+}
+
+.btn4
+{
+    background-color: transparent;
+    border-color: white;
+}
+
+#two
+{
+    text-align: center;
+}
+
+#btn-3
+{
+    margin-left: 20px;
+}
+
+#graph
+{
+    justify-content: center;
+}
+
+h4
+{
+    margin-bottom: 0px;
+}
+
+#row2
+{
+    text-align: center;
+}
+
+#row3
+{
+    text-align: center;
+}
+
+ul
+{
+    text-align: left;
+    font-size: large;
+}
+
+#readsub
+{
+    font-family: "Times New Roman", Times, serif;
+    font-size: xx-large;
+}
+
+#option2
+{
+    margin-left: -233px;
+}
+
+.blurred-bg-container .content 
+{
+    border-radius: 8px;
+    box-shadow: 0 0 32px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    /* filter: drop-shadow(2px 4px 6px black);  */
+}
+
+.blurred-bg-container .text 
+{
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.about-header
+{
+    text-decoration: underline;
+    filter: drop-shadow(2px 4px 6px black);
+}
+
+.about-header2
+{
+    filter: drop-shadow(2px 4px 6px black);
+}
+
+.btn-primary
+{
+    background-color: #182875;
+    border-color: white;
+}
+
+td
+{
+    /* font-family: Arial;  */
+    /* 
+    font-family: "Times New Roman", Times, serif; */
+    font-size: 12px;
+}
+
+a{
+    /* font-family: "Times New Roman", Times, serif; */
+    font-weight: bold;
+    color: #fff;
+}
