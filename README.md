@@ -9,4 +9,6 @@ Twitter data(commonly know as tweets) is a incredibly powerful source of informa
 
 This projects is an approach in analyzing sentiments on Climate Change using data collected for some of the most trending hashtags related to Climate Change. Further machine learning model's have been developed in-order to help a user predict, an applicable climate change hashtag and sentiment for a tweet entered by him/her.
 
+![Twitter-climate](webapp/static/images/Twitter-Climate.jpg)
+
 
