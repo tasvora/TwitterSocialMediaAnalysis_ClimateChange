@@ -2,6 +2,8 @@ import numpy as np
 import pandas as pd
 
 from sklearn.externals import joblib
+from nltk.tokenize import TweetTokenizer
+from nltk.corpus import stopwords
 
 
 import psycopg2
@@ -12,9 +14,9 @@ from sqlalchemy import create_engine
 
 from flask import Flask, jsonify, render_template
 from flask_sqlalchemy import SQLAlchemy
-import getSentiment
+import TwitterMachineLearning
 
-from config import (db_user, 
+from config_WithInfo import (db_user, 
                     db_password, 
                     database, 
                     db_url)
@@ -24,8 +26,42 @@ from config import (db_user,
 #################################################
 app = Flask(__name__)
 
-with open('mlmodel/twitterLinearSVCModel.pkl', 'rb') as f:
-    model = joblib.load(f)
+
+
+
+# List of stopwords
+stop_words= stopwords.words('english') #import stopwords from NLTK package
+readInStopwords = pd.read_csv("pre_process/twitterStopWords.csv", encoding='ISO-8859-1') # import stopwords from CSV file as pandas data frame
+readInStopwords = readInStopwords.wordList.tolist() # convert pandas data frame to a list
+
+readInStopwords.append('http')
+readInStopwords.append('https')
+
+search_terms = ['#climateStrike','#climatestrike','#climatechange','#GreenNewDeal','#climatecrisis','#climateAction','#FridaysForFuture',
+            '#environment','#globalwarming','#GlobalWarming','#ActOnClimate','#sustainability','#savetheplanet',
+        '#bushfiresAustralia','#bushfires']
+
+readInStopwords.extend(search_terms)
+stop_list = stop_words + readInStopwords # combine two lists i.e. NLTK stop words and CSV stopwords
+stop_list = list(set(stop_list)) # strore only unique values 
+
+ 
+
+
+#Helper Function to Tokenize Tweet
+def tokenize_only(in_string):
+    """
+    Convert `in_string` of text to a list of tokens using NLTK's TweetTokenizer
+    """
+    # reasonable, but adjustable tokenizer settings
+    tokenizer = TweetTokenizer(preserve_case=False,
+                               reduce_len=True,
+                               strip_handles=False)
+    tokens = tokenizer.tokenize(in_string)
+    return tokens
+
+with open('../machine_learning/twitterLinearSVCModel.pkl', 'rb') as f:
+    model = joblib.load(f)   
 
 #################################################
 # Database Setup
@@ -68,7 +104,7 @@ def welcome():
 def predictTweet(tweetTxt):
     print("the prediction of my code")
     predictedHashtag = model.predict([tweetTxt])[0]
-    predictedSentiment = getSentiment.sentiment(tweetTxt)
+    predictedSentiment = TwitterMachineLearning.getSentiment(tweetTxt)
     predictions = [predictedHashtag,predictedSentiment]
     print(predictedHashtag)
     print(predictedSentiment)

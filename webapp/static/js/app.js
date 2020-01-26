@@ -26,7 +26,7 @@ function getPrediction(TweetText) {
   console.log(url);
   d3.json(url).then(function(response) {
     console.log(response);
-      result = response[0] + ". And the sentiment predicted is ["+ response[1]+"]";
+      result = "Predicted " + response[0] + ", with a  "+ response[1] + " sentiment.";
       d3.select("h1>span").text(result);
       // d3.select("#TweetText").text("");
       
