@@ -67,11 +67,6 @@ with open('../machine_learning/twitterLinearSVCModel.pkl', 'rb') as f:
 # Database Setup
 #################################################
 
-# user = 'postgres'
-# pw = 'postgres'
-# database = 'myDatabase'
-# url = 'database-taz.c0yf4m81wf99.us-east-2.rds.amazonaws.com:5432'
-
 DB_URL = f'postgresql+psycopg2://{db_user}:{db_password}@{db_url}/{database}'
 print(DB_URL)
 app.config['SQLALCHEMY_DATABASE_URI'] = DB_URL
