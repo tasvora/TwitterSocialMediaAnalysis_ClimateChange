@@ -11,6 +11,8 @@ This project is an approach in analyzing sentiments on Climate Change using data
 
 ![Twitter-climate](images/Twitter-Climate1.jpg)
 
+<hr>
+
 ## Text Analytics Workflow for Twitter Data - 
 
 ![workflow](images/workflow.png) 
