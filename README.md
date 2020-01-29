@@ -93,44 +93,44 @@ After we have our features, we can train a classifier to try to predict the most
      
 ***Logistic Regression Model*** ***_0.82% Accuracy_***
 
-                 precision    recall  f1-score   support
+                           precision    recall  f1-score   support
 
-    #actonclimate       0.85      0.73      0.79       568
-       #bushfires       0.91      0.84      0.87       270
-   #climateaction       0.74      0.66      0.70      1913
-   #climatechange       0.81      0.81      0.81      4857
-   #climatecrisis       0.76      0.68      0.72      1495
-   #climatestrike       0.82      0.94      0.88      5507
-     #environment       0.85      0.84      0.84      1411
-#fridaysforfuture       0.83      0.53      0.65       911
-   #globalwarming       0.80      0.86      0.83      1246
-    #greennewdeal       0.88      0.87      0.88      1377
-   #savetheplanet       0.90      0.81      0.85       430
-  #sustainability       0.89      0.91      0.90      1737
+        #actonclimate       0.85      0.73      0.79       568
+           #bushfires       0.91      0.84      0.87       270
+       #climateaction       0.74      0.66      0.70      1913
+       #climatechange       0.81      0.81      0.81      4857
+       #climatecrisis       0.76      0.68      0.72      1495
+       #climatestrike       0.82      0.94      0.88      5507
+         #environment       0.85      0.84      0.84      1411
+    #fridaysforfuture       0.83      0.53      0.65       911
+       #globalwarming       0.80      0.86      0.83      1246
+        #greennewdeal       0.88      0.87      0.88      1377
+       #savetheplanet       0.90      0.81      0.85       430
+      #sustainability       0.89      0.91      0.90      1737
 
-         accuracy                           0.82     21722
-        macro avg       0.84      0.79      0.81     21722
-     weighted avg       0.82      0.82      0.82     21722
+             accuracy                           0.82     21722
+            macro avg       0.84      0.79      0.81     21722
+         weighted avg       0.82      0.82      0.82     21722
      
 ***RandomForestClassifier**** ***_0.79% Accuracy_***
 
-                   precision    recall  f1-score   support
+                           precision    recall  f1-score   support
 
-    #actonclimate       0.81      0.72      0.76       568
-       #bushfires       0.82      0.78      0.80       270
-   #climateaction       0.67      0.66      0.66      1913
-   #climatechange       0.79      0.77      0.78      4857
-   #climatecrisis       0.70      0.67      0.69      1495
-   #climatestrike       0.81      0.86      0.83      5507
-     #environment       0.83      0.82      0.82      1411
-#fridaysforfuture       0.59      0.50      0.54       911
-   #globalwarming       0.80      0.83      0.81      1246
-    #greennewdeal       0.85      0.87      0.86      1377
-   #savetheplanet       0.85      0.79      0.82       430
-  #sustainability       0.89      0.88      0.88      1737
+        #actonclimate       0.81      0.72      0.76       568
+           #bushfires       0.82      0.78      0.80       270
+       #climateaction       0.67      0.66      0.66      1913
+       #climatechange       0.79      0.77      0.78      4857
+       #climatecrisis       0.70      0.67      0.69      1495
+       #climatestrike       0.81      0.86      0.83      5507
+         #environment       0.83      0.82      0.82      1411
+    #fridaysforfuture       0.59      0.50      0.54       911
+       #globalwarming       0.80      0.83      0.81      1246
+        #greennewdeal       0.85      0.87      0.86      1377
+       #savetheplanet       0.85      0.79      0.82       430
+      #sustainability       0.89      0.88      0.88      1737
 
-         accuracy                           0.79     21722
-        macro avg       0.78      0.76      0.77     21722
-     weighted avg       0.79      0.79      0.79     21722
+             accuracy                           0.79     21722
+            macro avg       0.78      0.76      0.77     21722
+         weighted avg       0.79      0.79      0.79     21722
 
 
