@@ -153,3 +153,6 @@ Futher all of these model were tuned with various parameters to achieve a better
 
 ## Conclusion -
 Best model as per accuracy is Linear SVC to predict a applicable hashtag.
+
+Further improvement can be acheived by using Stemming and Lemmatization on the text data, and then classifying will give a better results.
+
