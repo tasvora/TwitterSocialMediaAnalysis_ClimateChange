@@ -52,8 +52,7 @@ To make the vectorizer => transformer => classifier easier to work with, we will
 After we have our features, we can train a classifier to try to predict the most applicable hashtag of a user entered Tweet, and suggests it to the user help him/her use it for more visibility.
 
 ***Naive Bayes Classifier for Multinomial Models*** ***_0.62% Accuracy_***
-
-             precision    recall  f1-score   support
+              precision    recall  f1-score   support
 
            0       0.71      0.51      0.60       549
            1       0.63      0.51      0.57       278
@@ -69,24 +68,24 @@ After we have our features, we can train a classifier to try to predict the most
           11       0.77      0.66      0.71      1714
 
     accuracy                           0.62     21722
-   macro avg       0.62      0.53      0.56     21722
-weighted avg       0.62      0.62      0.61     21722
+    macro avg      0.62      0.53      0.56     21722
+    weighted avg   0.62      0.62      0.61     21722
 
 ***Linear Support Vector Machine*** ***_0.85% Accuracy_***
-                  precision    recall  f1-score   support
+                      precision    recall  f1-score   support
 
-    #actonclimate       0.92      0.70      0.80       568
-       #bushfires       0.91      0.77      0.83       270
-   #climateaction       0.91      0.64      0.75      1913
-   #climatechange       0.81      0.90      0.85      4857
-   #climatecrisis       0.89      0.70      0.78      1495
-   #climatestrike       0.84      0.96      0.89      5507
-     #environment       0.86      0.85      0.86      1411
-#fridaysforfuture       0.97      0.46      0.62       911
-   #globalwarming       0.82      0.87      0.84      1246
-    #greennewdeal       0.87      0.91      0.89      1377
-   #savetheplanet       0.94      0.78      0.85       430
-  #sustainability       0.88      0.97      0.92      1737
+        #actonclimate       0.92      0.70      0.80       568
+           #bushfires       0.91      0.77      0.83       270
+       #climateaction       0.91      0.64      0.75      1913
+       #climatechange       0.81      0.90      0.85      4857
+       #climatecrisis       0.89      0.70      0.78      1495
+       #climatestrike       0.84      0.96      0.89      5507
+       #environment         0.86      0.85      0.86      1411
+       #fridaysforfuture    0.97      0.46      0.62       911
+       #globalwarming       0.82      0.87      0.84      1246
+        #greennewdeal       0.87      0.91      0.89      1377
+       #savetheplanet       0.94      0.78      0.85       430
+      #sustainability       0.88      0.97      0.92      1737
 
          accuracy                           0.85     21722
         macro avg       0.89      0.79      0.82     21722
