@@ -133,4 +133,23 @@ After we have our features, we can train a classifier to try to predict the most
             macro avg       0.78      0.76      0.77     21722
          weighted avg       0.79      0.79      0.79     21722
 
+## Parameter Tuning - GridSearchCV
 
+Futher all of these model were tuned with various parameters to achieve a better accuracy results.
+***Naive Bayes Classifier for Multinomial Models***
+Best cross-validation score: 0.66
+Best parameters:  {'clf__alpha': 0.01, 'tfidf__ngram_range': (1, 2), 'tfidf__use_idf': False}
+
+***Linear Support Vector Machine***
+> Best cross-validation score: 0.86
+> Best parameters:  {'clf__C': 0.01, 'tfidf__ngram_range': (1, 1), 'tfidf__use_idf': False}
+
+***Logistic Regression***
+> Best cross-validation score: 0.83
+> Best parameters:  {'C': 1}
+
+***Random Forest Classifier***
+max_depth=125, n_estimators=250, score=0.816
+
+## Conclusion -
+Best model as per accuracy is Linear SVC to predict a applicable hashtag.
