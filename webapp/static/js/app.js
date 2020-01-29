@@ -1,10 +1,10 @@
 // Select the button
-var button = d3.select("#filter-btn");
+var button = d3.select("#predict-btn");
 
 button.on("click", function () {
 
   // Select the input element and get the raw HTML node
-  var inputElement = d3.select("#TweetText");
+  var inputElement = d3.select("#inputTweet");
 
   // Get the value property of the input element
   var inputValue = inputElement.property("value");
@@ -27,7 +27,7 @@ function getPrediction(TweetText) {
   d3.json(url).then(function(response) {
     console.log(response);
       result = "Predicted " + response[0] + ", with a  "+ response[1] + " sentiment.";
-      d3.select("h1>span").text(result);
+      d3.select("#outputPredict").text(result);
       // d3.select("#TweetText").text("");
       
   });

@@ -119,7 +119,7 @@ def initTwitterdata():
     session = Session(db.engine)
     # stmt = db.session.query(tweetpreview.text,tweetpreview.date,tweetpreview.search_hashtags).statement
     #  updated_df = pd.read_sql_query(stmt, db.session.bind)
-    results = session.query(tweetpreview.text, tweetpreview.date, tweetpreview.search_hashtags).limit(15).all()
+    results = session.query(tweetpreview.text, tweetpreview.date, tweetpreview.search_hashtags).limit(20).all()
     tweetTxt = []
     tweetdate = []
     tweet_search_hashtags = []
@@ -132,22 +132,37 @@ def initTwitterdata():
     updated_df = pd.DataFrame({"text":tweetTxt,"date":tweetdate,"search_hashtags":tweet_search_hashtags})
     return updated_df.to_json(orient='records')    
 
+@app.route('/trending')
+def trending():
+    return render_template("trendingCharts.html")
 
 @app.route('/dashboard1')
 def dashboard1():
-    return render_template("dashboard1.html")
+    return render_template("allHashTagsDashboard.html")
 
 @app.route('/dashboard2')
 def dashboard2():
-    return render_template("dashboard2.html")
+    return render_template("bushfires.html")
 
 @app.route('/story1')
 def story1():
-    return render_template("story1.html")
+    return render_template("climateStrikeStory.html")
 
 @app.route('/predictions')
 def predictions():
     return render_template("predictions.html")
+
+@app.route('/tableau')
+def tableau():
+    return render_template("tableau.html")
+
+@app.route('/about')
+def about():
+    return render_template("about.html")
+
+@app.route('/contact')
+def contact():
+    return render_template("contact.html")    
 
 
 if __name__ == '__main__':
