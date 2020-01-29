@@ -1,0 +1,57 @@
+
+.footer
+{
+    color: #999;
+    text-align: center;
+    background-color: lightskyblue;
+    border-top: .05rem solid lightskyblue;
+}
+
+.navbar-brand
+{
+    font-size: 25px;
+    padding-left: 5px;
+    /* font-family: "Times New Roman", Times, serif; */
+    font-weight: bold;
+    text-shadow: 0 0 .5em rgba(0, 0, 0, 0.6);
+    background-color: lightskyblue;
+    padding: .5em;
+    color: #fff;
+}
+
+.navbar-light .navbar-brand
+{
+    color: white;
+    
+}
+
+.navbar-nav
+{
+    padding-right: 40px;
+}
+
+ul
+{
+    text-align: left;
+    font-size: large;
+}
+
+.nav-link{
+    /* font-family: "Times New Roman", Times, serif; */
+    font-weight: bold;
+    color: #fff;
+}
+
+
+
+textarea#outputPredict {
+    font-weight: bold;
+    background: lightgray;
+    
+}
+
+  /* Make the image fully responsive */
+  /* .carousel-inner img {
+    width: 100%;
+    height: 100%;
+} */
