@@ -20,7 +20,7 @@ This project is an approach in analyzing sentiments on Climate Change using data
 ## Collect Data 
 
 Using twitter’s API you one can not mine tweets older than seven days. 
-I found out about the GetOldTweets-python tool originally developed by [Jefferson Henrique]:https://github.com/Jefferson-Henrique/GetOldTweets-python in Python version 2.x, and later modified by [Dmitri Mottl]:https://github.com/Mottl/GetOldTweets3 in Python version 3.x.
+I found out about the GetOldTweets-python tool originally developed by Jefferson Henrique:https://github.com/Jefferson-Henrique/GetOldTweets-python in Python version 2.x, and later modified by Dmitri Mottl:https://github.com/Mottl/GetOldTweets3 in Python version 3.x.
 This was a lot helpful, and helped obtain almost 50000+ tweets for the year of 2019, for 
 > Florida,Chicago,Newyork,California – in USA 
 > London, Paris, Cairo, Moscow, Sydney, Mumbai, India, Sweden,Australia, Mexico, Shangai – outside USA
@@ -54,7 +54,7 @@ After we have our features, we can train a classifier to try to predict the most
 
 
 ***Naive Bayes Classifier for Multinomial Models*** 
-The multinomial [Naive Bayes][MB] classifier is suitable for classification with discrete features (e.g., word counts for text classification). The multinomial distribution normally requires integer feature counts. However, in practice, fractional counts such as tf-idf may also work.
+The multinomial Naive Bayes:https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.MultinomialNB.html classifier is suitable for classification with discrete features (e.g., word counts for text classification). The multinomial distribution normally requires integer feature counts. However, in practice, fractional counts such as tf-idf may also work.
 
 ***Accuracy - _0.62% Accuracy_***
               precision    recall  f1-score   support
@@ -163,6 +163,6 @@ Further improvement can be acheived by using Stemming and Lemmatization on the t
 
 
 
-[MB] https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.MultinomialNB.html 
+
 
 
