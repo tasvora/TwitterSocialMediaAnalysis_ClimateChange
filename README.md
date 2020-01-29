@@ -137,8 +137,8 @@ After we have our features, we can train a classifier to try to predict the most
 
 Futher all of these model were tuned with various parameters to achieve a better accuracy results.
 ***Naive Bayes Classifier for Multinomial Models***
-Best cross-validation score: 0.66
-Best parameters:  {'clf__alpha': 0.01, 'tfidf__ngram_range': (1, 2), 'tfidf__use_idf': False}
+> Best cross-validation score: 0.66
+> Best parameters:  {'clf__alpha': 0.01, 'tfidf__ngram_range': (1, 2), 'tfidf__use_idf': False}
 
 ***Linear Support Vector Machine***
 > Best cross-validation score: 0.86
@@ -149,7 +149,7 @@ Best parameters:  {'clf__alpha': 0.01, 'tfidf__ngram_range': (1, 2), 'tfidf__use
 > Best parameters:  {'C': 1}
 
 ***Random Forest Classifier***
-max_depth=125, n_estimators=250, score=0.816
+> max_depth=125, n_estimators=250, score=0.816
 
 ## Conclusion -
 Best model as per accuracy is Linear SVC to predict a applicable hashtag.
