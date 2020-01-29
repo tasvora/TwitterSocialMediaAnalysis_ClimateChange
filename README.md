@@ -56,7 +56,7 @@ After we have our features, we can train a classifier to try to predict the most
 ***Naive Bayes Classifier for Multinomial Models*** 
 The multinomial Naive Bayes:https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.MultinomialNB.html classifier is suitable for classification with discrete features (e.g., word counts for text classification). The multinomial distribution normally requires integer feature counts. However, in practice, fractional counts such as tf-idf may also work.
 
-***Accuracy - _0.62% Accuracy_***
+***_0.62% Accuracy_***
               precision    recall  f1-score   support
 
            0       0.71      0.51      0.60       549
@@ -75,6 +75,8 @@ The multinomial Naive Bayes:https://scikit-learn.org/stable/modules/generated/sk
     accuracy                           0.62     21722
     macro avg      0.62      0.53      0.56     21722
     weighted avg   0.62      0.62      0.61     21722
+    
+    
 
 ***Linear Support Vector Machine*** ***_0.85% Accuracy_***
                       precision    recall  f1-score   support
@@ -96,7 +98,11 @@ The multinomial Naive Bayes:https://scikit-learn.org/stable/modules/generated/sk
         macro avg       0.89      0.79      0.82     21722
      weighted avg       0.86      0.85      0.85     21722
      
-***Logistic Regression Model*** ***_0.82% Accuracy_***
+***Logistic Regression Model*** 
+Logistic regression, despite its name, is a linear model for classification rather than regression. Logistic regression is also known in the literature as logit regression, maximum-entropy classification (MaxEnt) or the log-linear classifier. In this model, the probabilities describing the possible outcomes of a single trial are modeled using a logistic function. [ref]:https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+
+
+***_0.82% Accuracy_***
 
                            precision    recall  f1-score   support
 
