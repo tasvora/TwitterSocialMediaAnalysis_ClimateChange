@@ -164,7 +164,7 @@ Futher, all of these model were tuned with various parameters to achieve a bette
 ***Random Forest Classifier***
 > max_depth=125, n_estimators=250, score=0.816
 
-***Technical/Programming Details****
+***Technical/Programming Details***
 > * Python-Pandas was used in developing all the code for this project.
 > * Webapp -  has been developed using the Flask framework.
 > * Twitter Data - for machine learning and sentiment analysis has been stored in Excel Sheets, but eventually will be stored in a RDS server (PostgresSql/Mongo DB)
