@@ -2,12 +2,12 @@
 
 ## Introduction
 
-In recent explosion of Big Data, there is a growing demand for analyzing non traditional data sources, Social Media data is a big source of this data in form of chats, messages, news feeds and all of it is in an unstructured form. 
-Text analytics is a process that helps analyze this unstructured data and look for patterns, judge sentiments which further help organizations, companies in their desicion making.
+Given the recent explosion of Big Data, there is a growing demand for analyzing non traditional data sources. Social Media data is a big source of this data in form of chats, messages, news feeds and all of it is in an unstructured form. 
+Text analytics is a process that helps analyze this unstructured data and look for patterns or deduce popular sentiment which further helps organizations in their desicion making.
 
-Twitter data(commonly know as tweets) is a incredibly powerful source of information on a extensive list of topics. This data can be analyzed to find trends related to specific topic, measure sentiments, obtain feedback on past desicions and could also help make future desicions.
+Twitter data (commonly know as tweets) is a incredibly powerful source of information on an extensive list of topics. This data can be analyzed to find trends related to specific topic, measure popular sentiment, obtain feedback on past desicions and also help make future desicions.
 #### TwitterSocialMediaAnalysis_ClimateChange :
-This project is an approach in analyzing sentiments on Climate Change using data collected for some of the most trending hashtags related to Climate Change. Further machine learning model's have been developed in-order to help a user predict, an applicable climate change hashtag and sentiment for a tweet entered by him/her.
+This project is an approach towards analyzing popular sentiment on Climate Change using twitter data collected for some of the most trending hashtags related to Climate Change. Further, machine learning models have been developed in order to help a user predict an applicable climate change hashtag and ascertain the sentiment of a tweet entered by her.
 
 ![Twitter-climate](images/Twitter-Climate1.jpg)
 
@@ -19,11 +19,13 @@ This project is an approach in analyzing sentiments on Climate Change using data
 
 ## Collect Data 
 
-Using twitter’s API you one can not mine tweets older than seven days. 
-I found out about the GetOldTweets-python tool originally developed by Jefferson Henrique:https://github.com/Jefferson-Henrique/GetOldTweets-python in Python version 2.x, and later modified by Dmitri Mottl:https://github.com/Mottl/GetOldTweets3 in Python version 3.x.
-This was a lot helpful, and helped obtain almost 50000+ tweets for the year of 2019, for 
-> Florida,Chicago,Newyork,California – in USA 
-> London, Paris, Cairo, Moscow, Sydney, Mumbai, India, Sweden,Australia, Mexico, Shangai – outside USA
+Using twitter’s API one can not mine tweets older than seven days. 
+I found the GetOldTweets-python tool originally developed by Jefferson Henrique:https://github.com/Jefferson-Henrique/GetOldTweets-python in Python version 2.x, and later modified by Dmitri Mottl:https://github.com/Mottl/GetOldTweets3 in Python version 3.x, which was very helpful, and allowed me to obtain almost 50000+ tweets for the year of 2019, for 
+
+> Florida, Chicago, Newyork, California – in USA
+
+> London, Paris, Cairo, Moscow, Sydney, Mumbai, India, Sweden, Australia, Mexico, Shangai – outside USA
+
 Tweets obtained were based on trending climate related hashtags 
 search_hashtags=['#climateStrike','#climatestrike','#climatechange','#GreenNewDeal','#climatecrisis','#climateAction',
                    '#FridaysForFuture','#environment','#globalwarming','#GlobalWarming','#ActOnClimate',
