@@ -164,7 +164,7 @@ Futher, all of these model were tuned with various parameters to achieve a bette
 ***Random Forest Classifier***
 > max_depth=125, n_estimators=250, score=0.816
 
-## Conclusion -
+## Conclusion
 Best model as per accuracy is Linear SVC to predict a applicable hashtag.
 
 Further improvement can be acheived by using Stemming and Lemmatization on the text data, and then classifying will give a better results.
