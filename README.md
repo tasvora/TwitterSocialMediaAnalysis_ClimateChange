@@ -33,25 +33,25 @@ Tweets obtained were based on trending climate related hashtags
 
 ## Sentiment Analysis
 
-TextBlob and VaderSentiment Analyzer were used to measure the sentiments of the collected tweet, and based on the VaderSentiment Analyzer, obtained the Avg Vader Compound for each trending hashtag and developed some visualizations to get some insight in the story behind a sentiment.
-For eg- Hashtag Climate Strike was trending in Sept 2019, because of School Strikes for climate change and it had negative/positive sentiments shown in tweets.
+TextBlob and VaderSentiment Analyzer were used to measure the sentiment of the collected tweet, and based on the VaderSentiment Analyzer, the average Vader Compound for each trending hashtag was obtained. This was used in some visualizations to get some insight into the story behind a sentiment.
+For example, the hashtag #ClimateStrike was trending in September of 2019, because of the school strikes for climate change and it had negative/positive sentiments shown in tweets.
 
 
 ## Supervised Learning 
 
-The tweet data is not a pre-labeled data, for this project. And hence a categorical feature the hashtags which were used to retrieve tweet data were used as ***Y*** And the tweet Text is used as feature for ***X***
+The tweet data is not pre-labeled for this project. And hence a categorical feature -- the hashtags -- which were used to retrieve tweet data were used as ***Y*** And the tweet Text is used as feature for ***X***
 
 ## Natural Language Processing
 
 Prior to training the model, we needed to do some processing to the text data. 
-Text cleaning step includes removing URL's, remove stop words, change text to lower case, remove punctuation, remove bad characters and so on.
+Text cleanup included removing URL's, removing stop words, changing text to uniform case, removing punctuations and unprintable characters, etc.
 
-After splitting the data set, the next steps includes feature engineering. Using TfidfVectorizer we will convert our text documents to a matrix of token counts and transform a count matrix to a normalized tf-idf representation (using TfidfVectorizer.fit_transform). After that, we train several classifiers from Scikit-Learn library.
+After splitting the data set, the next step was feature engineering. Using TfidfVectorizer, the text was converted to a matrix of token counts and the count matrix was transformed to a normalized tf-idf representation (using TfidfVectorizer.fit_transform). After that, several classifiers from Scikit-Learn library were trained.
 
 ## Machine Learning Models
-To make the vectorizer => transformer => classifier easier to work with, we will use Pipeline class in Scilkit-Learn that behaves like a compound classifier.
+To make the vectorizer => transformer => classifier easier to work with, the Pipeline class in Scilkit-Learn was used since it behaves like a compound classifier.
 
-After we have our features, we can train a classifier to try to predict the most applicable hashtag of a user entered Tweet, and suggests it to the user help him/her use it for more visibility.
+After all the features were extracted, the classifier was trained to try to predict the most applicable hashtag of a user entered tweet. This can help the user tweeting make his/her tweet a part of ongoing twitter conversations on the topic and more visible to a larger audience.
 
 
 
@@ -148,7 +148,7 @@ Logistic regression, despite its name, is a linear model for classification rath
 
 ## Parameter Tuning - GridSearchCV
 
-Futher all of these model were tuned with various parameters to achieve a better accuracy results.
+Futher, all of these model were tuned with various parameters to achieve a better accuracy results.
 ***Naive Bayes Classifier for Multinomial Models***
 > Best cross-validation score: 0.66
 > Best parameters:  {'clf__alpha': 0.01, 'tfidf__ngram_range': (1, 2), 'tfidf__use_idf': False}
