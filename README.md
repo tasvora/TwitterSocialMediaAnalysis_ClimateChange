@@ -165,17 +165,18 @@ Futher, all of these model were tuned with various parameters to achieve a bette
 > max_depth=125, n_estimators=250, score=0.816
 
 ***Technical/Programming Details****
-> Python-Pandas was used in developing all the code for this project.
-> Webapp -  has been developed using the Flask framework.
-> Twitter Data - for machine learning and sentiment analysis has been stored in Excel Sheets, but eventually will be stored in a RDS server (PostgresSql/Mongo DB)
-> Natural Language Processing - removing of stopwords , tokenization(TweetTokenizer,tokenize), stemming(SnowballStemmer) has been done using NLTK.
-> Vectorization - Scikit learn - TfidfVectorizer, CountVectorizer,TfidfTransformer
-> Machine Learning - Scikit learn - Linear SVC, Naive Bayes Classifier for Multinomial Model, Logistic Regression, Random Forest Classifier.
+> * Python-Pandas was used in developing all the code for this project.
+> * Webapp -  has been developed using the Flask framework.
+> * Twitter Data - for machine learning and sentiment analysis has been stored in Excel Sheets, but eventually will be stored in a RDS server (PostgresSql/Mongo DB)
+> * Natural Language Processing - removing of stopwords , tokenization(TweetTokenizer,tokenize), stemming(SnowballStemmer) has been done using NLTK.
+> * Vectorization - Scikit learn - TfidfVectorizer, CountVectorizer,TfidfTransformer
+> * Machine Learning - Scikit learn - Linear SVC, Naive Bayes Classifier for Multinomial Model, Logistic Regression, Random Forest Classifier.
 
 ## Conclusion
-> As per accuracy is Linear SVC to predict a applicable hashtag.
+> * As per accuracy is Linear SVC to predict a applicable hashtag.
 
-Further improvement can be acheived by tuning the models further and also work on clustering, topic and entity extraction, using LDA(Latent Derelicht Analysis) or NMF(Non-negative Matrix Factorization), need to further study these aspects to get a better understanding.
+## Scope of Improvement 
+> Further improvement can be acheived by tuning the models further and also work on clustering, topic and entity extraction, using LDA(Latent Derelicht Analysis) or NMF(Non-negative Matrix Factorization), need to further study these aspects to get a better understanding.
 
 
 
