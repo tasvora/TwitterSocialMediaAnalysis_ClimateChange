@@ -2,12 +2,12 @@
 
 ## Introduction
 
-In recent explosion of Big Data, there is a growing demand for analyzing non traditional data sources, Social Media data is a big source of this data in form of chats, messages, news feeds and all of it is in an unstructured form. 
-Text analytics is a process that helps analyze this unstructured data and look for patterns, judge sentiments which further help organizations, companies in their desicion making.
+Given the recent explosion of Big Data, there is a growing demand for analyzing non traditional data sources. Social Media data is a big source of this data in form of chats, messages, news feeds and all of it is in an unstructured form. 
+Text analytics is a process that helps analyze this unstructured data and look for patterns or deduce popular sentiment which further helps organizations in their desicion making.
 
-Twitter data(commonly know as tweets) is a incredibly powerful source of information on a extensive list of topics. This data can be analyzed to find trends related to specific topic, measure sentiments, obtain feedback on past desicions and could also help make future desicions.
+Twitter data (commonly know as tweets) is a incredibly powerful source of information on an extensive list of topics. This data can be analyzed to find trends related to specific topic, measure popular sentiment, obtain feedback on past desicions and also help make future desicions.
 #### TwitterSocialMediaAnalysis_ClimateChange :
-This project is an approach in analyzing sentiments on Climate Change using data collected for some of the most trending hashtags related to Climate Change. Further machine learning model's have been developed in-order to help a user predict, an applicable climate change hashtag and sentiment for a tweet entered by him/her.
+This project is an approach towards analyzing popular sentiment on Climate Change using twitter data collected for some of the most trending hashtags related to Climate Change. Further, machine learning models have been developed in order to help a user predict an applicable climate change hashtag and ascertain the sentiment of a tweet entered by her.
 
 ![Twitter-climate](images/Twitter-Climate1.jpg)
 
@@ -19,39 +19,46 @@ This project is an approach in analyzing sentiments on Climate Change using data
 
 ## Collect Data 
 
-Using twitter’s API you one can not mine tweets older than seven days. 
-I found out about the GetOldTweets-python tool originally developed by <a link="https://github.com/Jefferson-Henrique/GetOldTweets-python">Jefferson Henrique</a> in Python version 2.x, and later modified by <a link="https://github.com/Mottl/GetOldTweets3">Dmitri Mottl</a> in Python version 3.x.
-This was a lot helpful, and helped obtain almost 50000+ tweets for the year of 2019, for 
-> Florida,Chicago,Newyork,California – in USA 
-> London, Paris, Cairo, Moscow, Sydney, Mumbai, India, Sweden,Australia, Mexico, Shangai – outside USA
+Using twitter’s API one can not mine tweets older than seven days. 
+I found the GetOldTweets-python tool originally developed by Jefferson Henrique:https://github.com/Jefferson-Henrique/GetOldTweets-python in Python version 2.x, and later modified by Dmitri Mottl:https://github.com/Mottl/GetOldTweets3 in Python version 3.x, which was very helpful, and allowed me to obtain almost 50000+ tweets for the year of 2019, for 
+
+> Florida, Chicago, Newyork, California – in USA
+
+> London, Paris, Cairo, Moscow, Sydney, Mumbai, India, Sweden, Australia, Mexico, Shangai – outside USA
+
 Tweets obtained were based on trending climate related hashtags 
-search_hashtags=['#climateStrike','#climatestrike','#climatechange','#GreenNewDeal','#climatecrisis','#climateAction',
-                   '#FridaysForFuture','#environment','#globalwarming','#GlobalWarming','#ActOnClimate',
-                   '#sustainability','#savetheplanet','#bushfiresAustralia','#bushfires’]
+> search_hashtags=['#climateStrike','#climatestrike','#climatechange','#GreenNewDeal','#climatecrisis','#climateAction',
+>                  '#FridaysForFuture','#environment','#globalwarming','#GlobalWarming','#ActOnClimate',
+>                  '#sustainability','#savetheplanet','#bushfiresAustralia','#bushfires’]
 
 ## Sentiment Analysis
 
-TextBlob and VaderSentiment Analyzer were used to measure the sentiments of the collected tweet, and based on the VaderSentiment Analyzer, obtained the Avg Vader Compound for each trending hashtag and developed some visualizations to get some insight in the story behind a sentiment.
-For eg- Hashtag Climate Strike was trending in Sept 2019, because of School Strikes for climate change and it had negative/positive sentiments shown in tweets.
+TextBlob and VaderSentiment Analyzer were used to measure the sentiment of the collected tweet, and based on the VaderSentiment Analyzer, the average Vader Compound for each trending hashtag was obtained. This was used in some visualizations to get some insight into the story behind a sentiment.
+For example, the hashtag #ClimateStrike was trending in September of 2019, because of the school strikes for climate change and it had negative/positive sentiments shown in tweets.
 
 
 ## Supervised Learning 
 
-The tweet data is not a pre-labeled data, for this project. And hence a categorical feature the hashtags which were used to retrieve tweet data were used as ***Y*** And the tweet Text is used as feature for ***X***
+The tweet data is not pre-labeled for this project. And hence a categorical feature -- the hashtags -- which were used to retrieve tweet data were used as ***Y*** And the tweet Text is used as feature for ***X***
 
 ## Natural Language Processing
 
 Prior to training the model, we needed to do some processing to the text data. 
-Text cleaning step includes removing URL's, remove stop words, change text to lower case, remove punctuation, remove bad characters and so on.
+Text cleanup included removing URL's, removing stop words, changing text to uniform case, removing punctuations and unprintable characters, etc.
 
-After splitting the data set, the next steps includes feature engineering. Using TfidfVectorizer we will convert our text documents to a matrix of token counts and transform a count matrix to a normalized tf-idf representation (using TfidfVectorizer.fit_transform). After that, we train several classifiers from Scikit-Learn library.
+After splitting the data set, the next step was feature engineering. Using TfidfVectorizer, the text was converted to a matrix of token counts and the count matrix was transformed to a normalized tf-idf representation (using TfidfVectorizer.fit_transform). After that, several classifiers from Scikit-Learn library were trained.
 
 ## Machine Learning Models
-To make the vectorizer => transformer => classifier easier to work with, we will use Pipeline class in Scilkit-Learn that behaves like a compound classifier.
+To make the vectorizer => transformer => classifier easier to work with, the Pipeline class in Scilkit-Learn was used since it behaves like a compound classifier.
 
-After we have our features, we can train a classifier to try to predict the most applicable hashtag of a user entered Tweet, and suggests it to the user help him/her use it for more visibility.
+After all the features were extracted, the classifier was trained to try to predict the most applicable hashtag of a user entered tweet. This can help the user tweeting make his/her tweet a part of ongoing twitter conversations on the topic and more visible to a larger audience.
 
-***Naive Bayes Classifier for Multinomial Models*** ***_0.62% Accuracy_***
+
+
+***Naive Bayes Classifier for Multinomial Models*** 
+The multinomial Naive Bayes:https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.MultinomialNB.html classifier is suitable for classification with discrete features (e.g., word counts for text classification). The multinomial distribution normally requires integer feature counts. However, in practice, fractional counts such as tf-idf may also work.
+
+***_0.62% Accuracy_***
               precision    recall  f1-score   support
 
            0       0.71      0.51      0.60       549
@@ -70,6 +77,8 @@ After we have our features, we can train a classifier to try to predict the most
     accuracy                           0.62     21722
     macro avg      0.62      0.53      0.56     21722
     weighted avg   0.62      0.62      0.61     21722
+    
+    
 
 ***Linear Support Vector Machine*** ***_0.85% Accuracy_***
                       precision    recall  f1-score   support
@@ -91,7 +100,11 @@ After we have our features, we can train a classifier to try to predict the most
         macro avg       0.89      0.79      0.82     21722
      weighted avg       0.86      0.85      0.85     21722
      
-***Logistic Regression Model*** ***_0.82% Accuracy_***
+***Logistic Regression Model*** 
+Logistic regression, despite its name, is a linear model for classification rather than regression. Logistic regression is also known in the literature as logit regression, maximum-entropy classification (MaxEnt) or the log-linear classifier. In this model, the probabilities describing the possible outcomes of a single trial are modeled using a logistic function. [ref]:https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+
+
+***_0.82% Accuracy_***
 
                            precision    recall  f1-score   support
 
@@ -135,7 +148,7 @@ After we have our features, we can train a classifier to try to predict the most
 
 ## Parameter Tuning - GridSearchCV
 
-Futher all of these model were tuned with various parameters to achieve a better accuracy results.
+Futher, all of these model were tuned with various parameters to achieve a better accuracy results.
 ***Naive Bayes Classifier for Multinomial Models***
 > Best cross-validation score: 0.66
 > Best parameters:  {'clf__alpha': 0.01, 'tfidf__ngram_range': (1, 2), 'tfidf__use_idf': False}
@@ -151,8 +164,13 @@ Futher all of these model were tuned with various parameters to achieve a better
 ***Random Forest Classifier***
 > max_depth=125, n_estimators=250, score=0.816
 
-## Conclusion -
+## Conclusion
 Best model as per accuracy is Linear SVC to predict a applicable hashtag.
 
 Further improvement can be acheived by using Stemming and Lemmatization on the text data, and then classifying will give a better results.
+
+
+
+
+
 
