@@ -27,9 +27,9 @@ I found the GetOldTweets-python tool originally developed by Jefferson Henrique:
 > London, Paris, Cairo, Moscow, Sydney, Mumbai, India, Sweden, Australia, Mexico, Shangai – outside USA
 
 Tweets obtained were based on trending climate related hashtags 
-search_hashtags=['#climateStrike','#climatestrike','#climatechange','#GreenNewDeal','#climatecrisis','#climateAction',
-                   '#FridaysForFuture','#environment','#globalwarming','#GlobalWarming','#ActOnClimate',
-                   '#sustainability','#savetheplanet','#bushfiresAustralia','#bushfires’]
+> search_hashtags=['#climateStrike','#climatestrike','#climatechange','#GreenNewDeal','#climatecrisis','#climateAction',
+>                  '#FridaysForFuture','#environment','#globalwarming','#GlobalWarming','#ActOnClimate',
+>                  '#sustainability','#savetheplanet','#bushfiresAustralia','#bushfires’]
 
 ## Sentiment Analysis
 
