@@ -10,7 +10,7 @@ function buildhtml() {
       .enter()
       .append("tr")
       .html(function(d) {
-        return `<td>${d.text}</td><td>${d.date}</td><td>${d.search_hashtags}</td>`;
+        return `<td>${d.text}</td><td>${d.date}</td><td>${d.predict_hashtags}</td>`;
       });
   });
 }

@@ -119,7 +119,7 @@ def initTwitterdata():
     session = Session(db.engine)
     # stmt = db.session.query(tweetpreview.text,tweetpreview.date,tweetpreview.search_hashtags).statement
     #  updated_df = pd.read_sql_query(stmt, db.session.bind)
-    results = session.query(tweetpreview.text, tweetpreview.date, tweetpreview.search_hashtags).limit(20).all()
+    results = session.query(tweetpreview.text, tweetpreview.date,tweetpreview.search_hashtags).all()
     tweetTxt = []
     tweetdate = []
     tweet_search_hashtags = []
@@ -129,7 +129,7 @@ def initTwitterdata():
         tweet_search_hashtags.append(result.search_hashtags)
 
 
-    updated_df = pd.DataFrame({"text":tweetTxt,"date":tweetdate,"search_hashtags":tweet_search_hashtags})
+    updated_df = pd.DataFrame({"text":tweetTxt,"date":tweetdate,"predict_hashtags":tweet_search_hashtags})
     return updated_df.to_json(orient='records')    
 
 @app.route('/trending')
