@@ -53,7 +53,11 @@ To make the vectorizer => transformer => classifier easier to work with, the Pip
 
 After all the features were extracted, the classifier was trained to try to predict the most applicable hashtag of a user entered tweet. This can help the user tweeting make his/her tweet a part of ongoing twitter conversations on the topic and more visible to a larger audience.
 
+# Project Demo
 
+![ProjectDemo](images/ProjectDemo.gif) 
+
+## MACHINE LEARNING MODEL OUTPUTS
 
 ***Naive Bayes Classifier for Multinomial Models*** 
 The multinomial Naive Bayes:https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.MultinomialNB.html classifier is suitable for classification with discrete features (e.g., word counts for text classification). The multinomial distribution normally requires integer feature counts. However, in practice, fractional counts such as tf-idf may also work.
