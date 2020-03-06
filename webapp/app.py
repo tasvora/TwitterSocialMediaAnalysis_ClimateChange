@@ -16,7 +16,7 @@ from flask import Flask, jsonify, render_template
 from flask_sqlalchemy import SQLAlchemy
 import TwitterMachineLearning
 
-from config_WithInfo import (db_user, 
+from config import (db_user, 
                     db_password, 
                     database, 
                     db_url)
@@ -63,22 +63,26 @@ def tokenize_only(in_string):
 with open('../machine_learning/twitterLinearSVCModel.pkl', 'rb') as f:
     model = joblib.load(f)   
 
+# with open('../machine_learning/twitterMultinomialNBModel.pkl', 'rb') as f1:
+#     model1 = joblib.load(f1)   
+
 #################################################
 # Database Setup
 #################################################
 
-DB_URL = f'postgresql+psycopg2://{db_user}:{db_password}@{db_url}/{database}'
-print(DB_URL)
-app.config['SQLALCHEMY_DATABASE_URI'] = DB_URL
-db = SQLAlchemy(app)
-# print(db.engine.table_names())
+# DB_URL = f'postgresql+psycopg2://{db_user}:{db_password}@{db_url}/{database}'
+# print(DB_URL)
+# app.config['SQLALCHEMY_DATABASE_URI'] = DB_URL
+# db = SQLAlchemy(app)
+# # print(db.engine.table_names())
 
-Base = automap_base()
-# reflect the tables
+# Base = automap_base()
+# # reflect the tables
 
-Base.prepare(db.engine, reflect=True)
-print(Base.classes.keys())
-tweetpreview = Base.classes.tweetpreview
+# Base.prepare(db.engine, reflect=True)
+# print(Base.classes.keys())
+# tweetpreview = Base.classes.tweetpreview
+# tweetlive = Base.classes.tweetlive
 
 
 
@@ -98,7 +102,7 @@ def welcome():
 @app.route("/predictTweet/<tweetTxt>")
 def predictTweet(tweetTxt):
     print("the prediction of my code")
-    predictedHashtag = model.predict([tweetTxt])[0]
+    predictedHashtag = model.predict([tweetTxt])[0]    
     predictedSentiment = TwitterMachineLearning.getSentiment(tweetTxt)
     predictions = [predictedHashtag,predictedSentiment]
     print(predictedHashtag)
@@ -113,24 +117,43 @@ def predictTweet(tweetTxt):
 #     tweets = df_tweet[['text','date','hashtags']][:15]
 #     return tweets.to_json(orient='records')
 
-@app.route("/initTwitterdata")
-def initTwitterdata():
-    """Return the tweets obtained recently."""
-    session = Session(db.engine)
-    # stmt = db.session.query(tweetpreview.text,tweetpreview.date,tweetpreview.search_hashtags).statement
-    #  updated_df = pd.read_sql_query(stmt, db.session.bind)
-    results = session.query(tweetpreview.text, tweetpreview.date,tweetpreview.search_hashtags).all()
-    tweetTxt = []
-    tweetdate = []
-    tweet_search_hashtags = []
-    for result in results:
-        tweetTxt.append(result.text)
-        tweetdate.append((result.date).strftime('%Y-%m-%d'))
-        tweet_search_hashtags.append(result.search_hashtags)
+# @app.route("/initTwitterdata1")
+# def initTwitterdata1():
+#     """Return the tweets obtained recently."""
+#     session = Session(db.engine)
+#     # stmt = db.session.query(tweetpreview.text,tweetpreview.date,tweetpreview.search_hashtags).statement
+#     #  updated_df = pd.read_sql_query(stmt, db.session.bind)
+#     results = session.query(tweetpreview.text, tweetpreview.date,tweetpreview.search_hashtags).all()
+#     tweetTxt = []
+#     tweetdate = []
+#     tweet_search_hashtags = []
+#     for result in results:
+#         tweetTxt.append(result.text)
+#         tweetdate.append((result.date).strftime('%Y-%m-%d'))
+#         tweet_search_hashtags.append(result.search_hashtags)
 
 
-    updated_df = pd.DataFrame({"text":tweetTxt,"date":tweetdate,"predict_hashtags":tweet_search_hashtags})
-    return updated_df.to_json(orient='records')    
+#     updated_df = pd.DataFrame({"text":tweetTxt,"date":tweetdate,"predict_hashtags":tweet_search_hashtags})
+#     return updated_df.to_json(orient='records') 
+
+# @app.route("/initTwitterdata")
+# def initTwitterdata():
+#     """Return the tweets obtained recently."""
+#     session = Session(db.engine)
+#     results = session.query(tweetlive.text,tweetlive.created_at,tweetlive.predicttag,tweetlive.sentiment).all()
+#     tweetTxt = []
+#     tweetdate = []
+#     tweet_search_hashtags = []
+#     tweet_sentiment = []
+#     for result in results:
+#         tweetTxt.append(result.text)
+#         tweetdate.append(result.created_at)
+#         tweet_search_hashtags.append(result.predicttag)
+#         tweet_sentiment.append(result.sentiment)
+
+
+#     updated_df = pd.DataFrame({"text":tweetTxt,"date":tweetdate,"predict_hashtags":tweet_search_hashtags,"sentiment":tweet_sentiment})
+#     return updated_df.to_json(orient='records')           
 
 @app.route('/trending')
 def trending():
