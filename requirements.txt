@@ -97,7 +97,7 @@ textblob==0.15.3
 tornado==6.0.3
 traitlets==4.3.3
 tweepy==3.8.0
-urllib3==1.25.7
+urllib3==1.26.5
 vaderSentiment==3.2.1
 wcwidth==0.1.8
 webencodings==0.5.1
